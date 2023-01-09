@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>every() | Javascript</title>
+</head>
+<body>
+  <script>
+//      Este metodo retorna valores booleanos
+//    TRUE: si TODOS LOS ELEMENTOS cumplen una condición
+//    false: SI AL MENOS UNO, pocos o todos  son  falsos
+
+    const numeritos = [2,25,2,1,58,4,0,25,32,69,20,4,45,85,71];
+    const todos = numeritos.every(item => item < 86)
+    console.log(todos);
+
+    const productos = [
+            {
+                nombre: "Mesa",
+                precio: 600,
+                estado: true
+            },
+            {
+                nombre: "Sillas",
+                precio: 720,
+                estado: false
+            },
+            {
+                nombre: "Vajilla",
+                precio: 880,
+                estado: true
+            },
+            {
+                nombre: "Manteles",
+                precio: 240,
+                estado: true
+            }
+        ];
+
+      // Veremos si los nombres contienen la letra 'S'
+      
+      const letra = productos.every(item => item.nombre.includes("s"))
+
+  </script>
+</body>
+</html>

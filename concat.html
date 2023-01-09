@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Método concat() | Javascript</title>
+</head>
+
+<body>
+  <script>
+    const elements = [1, 1, 2, 2];
+    const otherElements = [3, 3, 4, 4];
+
+    // CONCATENACIÓN MODO 1
+    const newArray = [...elements];
+    for (let index = 0; index < otherElements.length; index++) {
+      const element = otherElements[index];
+      newArray.push(element)
+    }
+    //Imprime  [1, 1, 2, 2, 3, 3, 4, 4]
+    console.log(newArray);
+
+    // CONCATENACIÓN MODO 2
+    const nuevo = elements.concat(otherElements);
+    // Imprime   [1, 1, 2, 2, 3, 3, 4, 4]
+    console.log(nuevo);
+
+    // CONCATENACIÓN MODO 3
+    const concatenar = [...elements, ...otherElements];
+    console.log(concatenar);
+    //Imprime [1, 1, 2, 2, 3, 3, 4, 4];
+
+    //concatenando strings
+    const  rta1 = [...elements, "random"];
+    console.log(rta1);
+    // imprime (5) [1, 1, 2, 2, 'random']
+    
+
+    const  rta2 = [...elements, ..."random"];
+    console.log(rta2);
+    //  imprime caracteres del string separados  (10) [1, 1, 2, 2, 'r', 'a', 'n', 'd', 'o', 'm']
+
+    //OTRAS FORAS DE CONCATENAR
+    elements.push(...otherElements);
+    // Imprime [1, 1, 2, 2, 3, 3, 4, 4]
+
+    elements.push(otherElements);
+    // imprime el array completo como un solo elemento
+    // [1, 1, 2, 2, Array(4)]
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>some() | Javascript</title>
+</head>
+<body>
+  <script>
+    //---- Numeros pares, devulve true o false
+    const numeros = [1,2,6,8];
+    const pares = numeros.some( num => num%2 === 0);
+    console.log(pares);
+
+    // Verifica si hay entregas entregadas, regresa true o flase, según corresponda
+    const productos = [
+            {
+                nombre: "Mesa",
+                precio: 600,
+                entregado: false
+            },
+            {
+                nombre: "Sillas",
+                precio: 720,
+                entregado: false
+            },
+            {
+                nombre: "Vajilla",
+                precio: 880,
+                entregado: false
+            },
+            {
+                nombre: "Manteles",
+                precio: 240,
+                entregado: false
+            }
+        ];
+
+    const entregas = productos.some(product => product.entregado);
+    
+    console.log(entregas) //Devulve true o flase segunlas entregas entregadas
+  
+    const precios = productos.some(item => item.precio >= 800);
+    console.log(precios)   //imprime si hay algún precio mayor a 900
+  
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Método flatMap() | Javascript</title>
+</head>
+<body>
+  <script>
+//FORMA 1
+const users = [
+    {id: 1, name: "Tom", atributo: ["Nice", "Cute"]},
+    {id: 2, name: "Mike", atributo: ["Lovely"]},
+    {id: 3, name: "Nico", atributo: ["Nice", "Cool"]},
+];
+  const conflatmap = users.flatMap(item => item.atributo);
+// Imprime ['Nice', 'Cute', 'Lovely', 'Nice', 'Cool']
+
+
+//FORMA 2
+    const calendars = {
+    primerCalendario: [
+    {
+        startDate: new Date(2021, 1, 1, 15),
+        endDate: new Date(2021, 1, 1, 30),
+        title: "Cita 1",
+    },
+      {
+        startDate: new Date(2021, 1, 1, 17),
+        endDate: new Date(2021, 1, 1, 18),
+        title: "Cita 2",
+    },
+    ],
+    segundoCalendario: [
+      {
+        startDate: new Date(2021, 1, 1, 12),
+        endDate: new Date(2021, 1, 1, 30),
+        title: "Cita 3",
+    },
+          {
+        startDate: new Date(2021, 1, 1, 9),
+        endDate: new Date(2021, 1, 1, 10),
+        title: "Cita 4",
+    },
+    ],
+};
+  </script>
+</body>
+</html>

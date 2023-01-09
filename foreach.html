@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach() | Javascript</title>
+    <style>
+        li{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de cosas por hacer</h1>
+    <div id="list">
+    </div>
+<script>
+const actividades = [
+  {actividad: "Levantarse", estado: "Terminada"},
+  {actividad: "Desayunar", estado: "Terminada"},
+  {actividad: "Estudiar", estado: "Terminada"},
+  {actividad: "Ejercicio", estado: "Pendiente"},
+  {actividad: "Salir", estado: "Pendiente"},  
+  {actividad: "Correr", estado: "Terminada"}  
+];
+list = document.querySelector("#list");
+const nodos = [];
+// lista = "";    ----- [OPCIÓN 2]
+actividades.forEach(item => {
+nodo =  "<li><input type='checkbox'" + (item.estado ==='Terminada' && 'checked') + "><label>" + item.actividad + "</label><li>"; 
+
+/* --------[OPCIÓN 2]     
+    lista +=  "<li><input type='checkbox'" + (item.estado ==='Terminada' && 'checked') + "><label>" + item.actividad + "</label><li>"; */
+        
+nodos.push(nodo);    
+});
+list.innerHTML = nodos.join("");
+
+//   list.innerHTML = lista;   ------ [OPCIÓN 2]
+</script>
+</body>
+</html>

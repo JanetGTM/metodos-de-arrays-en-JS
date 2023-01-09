@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter() | Javascript</title>
+</head>
+<body>
+
+    <script>
+
+    const productos = [
+            {
+                nombre: "Mesa",
+                precio: 600,
+                estado: true
+            },
+            {
+                nombre: "Sillas",
+                precio: 720,
+                estado: false
+            },
+            {
+                nombre: "Vajilla",
+                precio: 880,
+                estado: true
+            },
+            {
+                nombre: "Manteles",
+                precio: 240,
+                estado: true
+            }
+        ];
+    
+/*-----METODO FILTER-----*/
+
+const words = productos.filter(item => item.nombre.length <= 6 && !item.estado);
+console.log("words-FILTER", words);
+    
+/*--BUSCADOR SI IMPORTAR MAYUSCULAS O MINUSCULAS---*/
+const search = (query) => {
+    return productos.filter(item => item.nombre.toString().toLowerCase().includes(query.toLowerCase()));
+    console.log("Buscador", search);
+}
+
+
+/*----- RETO con Filter-----*/
+const alumnos = [
+    {
+        name: "Julio",
+        lastname: "Pérez",
+        age: 30
+    },
+    {
+        name: "Maria Guadalupe",
+        lastname: "Fernández",
+        age: 25
+    },
+    {
+        name: "Eduardo",
+        lastname: "Bolaños",
+        age: 35
+    },
+    {
+        name: "Lázaro",
+        lastname: "Rodriguez",
+        age: 18
+    },
+]
+
+const search2 = (query) => {
+    const coincidencia =  alumnos.filter(item =>   
+         item.name.toString().toLowerCase().includes(query.toLowerCase()) ||
+         item.lastname.toString().toLowerCase().includes(query.toLowerCase()) ||
+         item.age.toString().toLowerCase().includes(query.toLowerCase())
+     );  
+    return coincidencia;
+}
+
+
+const arcoiris = ["flor", "amor", "flores", "colores", "mio", "sol", "cariño" ]
+const search3 = arcoiris.filter(item => item.length >= 4 );
+
+    </script>
+</body>
+</html>

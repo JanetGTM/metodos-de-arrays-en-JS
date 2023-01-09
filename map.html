@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map() | Javascript</title>
+</head>
+<body>
+
+    <script>
+
+        const orders = [
+            {
+                nombre: "Nicolas",
+                total: 60,
+                estado: true
+            },
+            {
+                nombre: "zulemma",
+                total: 120,
+                estado: false
+            },
+            {
+                nombre: "Santiago",
+                total: 180,
+                estado: true
+            },
+            {
+                nombre: "Valentina",
+                total: 240,
+                estado: true
+            }
+        ];
+    const newArray = orders.map(item => {
+        return {
+            ...item,
+            tax: 0.19
+        }
+
+    });
+    
+    console.log("tax", newArray);
+    
+    /*-------Ejemplo 2-------*/
+    const productos = [
+            {
+                nombre: "Mesa",
+                precio: 600,
+                estado: true
+            },
+            {
+                nombre: "Sillas",
+                precio: 720,
+                estado: false
+            },
+            {
+                nombre: "Vajilla",
+                precio: 880,
+                estado: true
+            },
+            {
+                nombre: "Manteles",
+                precio: 240,
+                estado: true
+            }
+        ];
+    
+function taxes(array){
+    const tax = array.map(item => {
+    return{ ...item, tax: Math.round(item.precio * .19)};
+    });
+    console.log("taxes", tax);
+    }
+    taxes(productos);
+
+
+    /*-----METODO FILTER-----*/
+
+const words = productos.filter(item => item.nombre.length <= 6 && !item.estado);
+console.log("words-FILTER", words);
+    
+/*--BUSCADOR SI IMPORTAR MAYUSCULAS O MINUSCULAS---*/
+const search = (query) => {
+    return productos.filter(item => item.nombre.toString().toLowerCase().includes(query.toLowerCase()));
+    console.log("Buscador", search);
+}
+
+
+
+    </script>
+</body>
+</html>
